@@ -1,7 +1,15 @@
 import 'package:catlog_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
-class log_in_page extends StatelessWidget {
+class log_in_page extends StatefulWidget {
+  @override
+  State<log_in_page> createState() => _log_in_pageState();
+}
+
+class _log_in_pageState extends State<log_in_page> {
+  String name = '';
+  bool changebutton = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,9 +31,9 @@ class log_in_page extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'welcome',
+                'welcome $name',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 25,
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
@@ -38,6 +46,10 @@ class log_in_page extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.person),
                         border: OutlineInputBorder(
@@ -64,12 +76,35 @@ class log_in_page extends StatelessWidget {
                     SizedBox(
                       height: 40,
                     ),
-                    ElevatedButton(
-                        style: TextButton.styleFrom(minimumSize: Size(120, 40)),
-                        onPressed: () {
-                          Navigator.pushNamed(context, myroutes.homepage);
-                        },
-                        child: Text('Login'))
+                    InkWell(
+                      onTap: () async{
+                        setState(() {
+                          changebutton = true;
+                        });
+                        await Future.delayed(Duration(milliseconds: 400));
+                        Navigator.pushNamed(context, myroutes.homepage);
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        width: changebutton ? 40 : 100,
+                        height: 40,
+                        child: changebutton
+                            ? Icon(Icons.done)
+                            : Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius:
+                              BorderRadius.circular(changebutton ? 40 : 50),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               )
