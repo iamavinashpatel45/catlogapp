@@ -5,7 +5,7 @@ class home_page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return Scaffold(
 
     );
   }
