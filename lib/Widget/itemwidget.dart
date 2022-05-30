@@ -13,7 +13,7 @@ class itemwidget extends StatelessWidget {
       child: ListTile(
         leading: Image.network(Item.image),
         title: Text(Item.name),
-        subtitle: Text(Item.dec),
+        subtitle: Text(Item.desc),
         trailing: Text("\$" + Item.price.toString(),
         style: TextStyle(
           fontWeight: FontWeight.bold,
