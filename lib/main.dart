@@ -14,10 +14,11 @@ class myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: myroutes.loginpage,
+      initialRoute: myroutes.homepage,
       routes: {
         myroutes.loginpage:(context) =>log_in_page(),
         myroutes.homepage:(context)=>home_page(),

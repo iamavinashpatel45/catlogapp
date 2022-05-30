@@ -1,3 +1,4 @@
+import 'package:catlog_app/Widget/Drawer.dart';
 import 'package:flutter/material.dart';
 
 class home_page extends StatelessWidget {
@@ -5,8 +6,12 @@ class home_page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Catlog App'),
+      ),
+      drawer: mydrawer(),
+      body: Text(''),
     );
   }
 }
