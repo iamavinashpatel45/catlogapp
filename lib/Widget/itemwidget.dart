@@ -31,16 +31,19 @@ class itemwidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.network(
-                      Item.image,
-                      //color: Colors.black26,
+                    child: Hero(
+                      tag: Key(Item.id.toString()),
+                      child: Image.network(
+                        Item.image,
+                        //color: Colors.black26,
+                      ),
                     ),
                   ),
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 16, left: 8,top: 25),
+                  padding: const EdgeInsets.only(bottom: 16, left: 8, top: 25),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -73,9 +76,10 @@ class itemwidget extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.black),
-                              shape: MaterialStateProperty.all(StadiumBorder())
-                            ),
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.black),
+                                shape:
+                                    MaterialStateProperty.all(StadiumBorder())),
                             child: Icon(
                               Icons.shopping_cart,
                               size: 25,

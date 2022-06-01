@@ -1,6 +1,8 @@
 import 'package:catlog_app/Widget/Drawer.dart';
-import 'package:catlog_app/Widget/myheader.dart';
+import 'package:catlog_app/Widget/itemwidget/myheader.dart';
 import 'package:catlog_app/models/catlogapp.dart';
+import 'package:catlog_app/pages/delails_page.dart';
+import 'package:catlog_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -42,16 +44,28 @@ class _home_pageState extends State<home_page> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           myheader(),
-          if (catlogitems.items.length != null && catlogitems.items.isNotEmpty) Expanded(
-                child: ListView.builder(
-            shrinkWrap: true,
-                    itemCount: catlogitems.items.length,
-                    itemBuilder: (context, index) => itemwidget(
+          if (catlogitems.items.length != null && catlogitems.items.isNotEmpty)
+            Expanded(
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: catlogitems.items.length,
+                  itemBuilder: (context, index) => InkWell(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => details_page(
+                                    Item: catlogitems.items[index]))),
+                        child: itemwidget(
                           Item: catlogitems.items[index],
-                        )),
-              ) else Center(
-                  child: CircularProgressIndicator(),
-                ),
+                        ),
+                      )),
+            )
+          else
+            Expanded(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
         ],
       ),
     );
