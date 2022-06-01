@@ -1,4 +1,5 @@
 import 'package:catlog_app/Widget/Drawer.dart';
+import 'package:catlog_app/Widget/myheader.dart';
 import 'package:catlog_app/models/catlogapp.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
@@ -24,7 +25,6 @@ class _home_pageState extends State<home_page> {
     var json = await rootBundle.loadString('assets/files/Catlog.json');
     var decode = jsonDecode(json);
     var products = decode['products'];
-    print(products);
     catlogitems.items =
         List.from(products).map<item>((item_) => item.fromMap(item_)).toList();
     setState(() {});
@@ -33,21 +33,26 @@ class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Catlog App'),
-      ),
-      drawer: mydrawer(),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: catlogitems.items.length != null && catlogitems.items.isNotEmpty
-            ? ListView.builder(
-                itemCount: catlogitems.items.length,
-                itemBuilder: (context, index) => itemwidget(
-                      Item: catlogitems.items[index],
-                    ))
-            : Center(
-                child: CircularProgressIndicator(),
-              ),
+      backgroundColor: Colors.grey[200],
+      // appBar: AppBar(
+      //   title: Text('Catlog App'),
+      // ),
+      // drawer: mydrawer(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          myheader(),
+          if (catlogitems.items.length != null && catlogitems.items.isNotEmpty) Expanded(
+                child: ListView.builder(
+            shrinkWrap: true,
+                    itemCount: catlogitems.items.length,
+                    itemBuilder: (context, index) => itemwidget(
+                          Item: catlogitems.items[index],
+                        )),
+              ) else Center(
+                  child: CircularProgressIndicator(),
+                ),
+        ],
       ),
     );
   }
