@@ -65,19 +65,22 @@ class itemwidget extends StatelessWidget {
                       ButtonBar(
                         alignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            '\$' + Item.price.toString(),
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                          Hero(
+                            tag: Key(Item.price.toString()),
+                            child: Text(
+                              '\$' + Item.price.toString(),
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
                             ),
                           ),
                           ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.black),
+                                    MaterialStateProperty.all(Colors.grey[700]),
                                 shape:
                                     MaterialStateProperty.all(StadiumBorder())),
                             child: Icon(

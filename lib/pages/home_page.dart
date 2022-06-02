@@ -1,4 +1,3 @@
-import 'package:catlog_app/Widget/Drawer.dart';
 import 'package:catlog_app/Widget/itemwidget/myheader.dart';
 import 'package:catlog_app/models/catlogapp.dart';
 import 'package:catlog_app/pages/delails_page.dart';
@@ -35,11 +34,20 @@ class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Container(
+        height: 70,
+        width: MediaQuery.of(context).size.width,
+      ),
       backgroundColor: Colors.grey[200],
       // appBar: AppBar(
       //   title: Text('Catlog App'),
       // ),
       // drawer: mydrawer(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()=>Navigator.pushNamed(context, myroutes.cart),
+        backgroundColor: Colors.grey[700],
+        child: Icon(Icons.shopping_cart),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

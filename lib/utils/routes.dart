@@ -1,5 +1,6 @@
-class myroutes{
-  static String loginpage='/login';
-  static String homepage='/home';
-  static String detailspage='/details';
+class myroutes {
+  static String loginpage = '/login';
+  static String homepage = '/home';
+  static String detailspage = '/details';
+  static String cart = '/cart';
 }

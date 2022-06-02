@@ -1,6 +1,10 @@
 import 'package:catlog_app/models/catlogapp.dart';
 import 'package:flutter/material.dart';
 
+import '../Widget/detailsfile/buttombar.dart';
+import '../Widget/detailsfile/details_image.dart';
+import '../Widget/detailsfile/details_mid.dart';
+
 class details_page extends StatelessWidget {
   final item Item;
 
@@ -9,6 +13,7 @@ class details_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -16,13 +21,13 @@ class details_page extends StatelessWidget {
           color: Colors.black,
         ),
       ),
-      backgroundColor: Colors.grey[200],
+      bottomNavigationBar: buttombar(Item: Item,),
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
-            Hero(
-                tag: Key(Item.id.toString()),
-                child: Image.network(Item.image)),
+            details_image(Item: Item),
+            details_mid(Item: Item),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:catlog_app/pages/cart_page.dart';
 import 'package:catlog_app/pages/home_page.dart';
 import 'package:catlog_app/pages/log_in_page.dart';
 import 'package:catlog_app/utils/routes.dart';
@@ -18,10 +19,11 @@ class myapp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: myroutes.loginpage,
+      initialRoute: myroutes.homepage,
       routes: {
         myroutes.loginpage: (context) => log_in_page(),
         myroutes.homepage: (context) => home_page(),
+        myroutes.cart:(context) =>cart_page(),
       },
     );
   }
