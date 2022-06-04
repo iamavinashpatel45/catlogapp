@@ -46,8 +46,8 @@ class _log_in_pageState extends State<log_in_page> {
                 Text(
                   'welcome $name',
                   style: TextStyle(
-                    fontSize: 25,
                     color: Colors.blue,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

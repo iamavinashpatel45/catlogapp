@@ -1,3 +1,4 @@
+import 'package:catlog_app/Widget/them.dart';
 import 'package:catlog_app/pages/cart_page.dart';
 import 'package:catlog_app/pages/home_page.dart';
 import 'package:catlog_app/pages/log_in_page.dart';
@@ -15,11 +16,11 @@ class myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      themeMode: ThemeMode.system,
+      darkTheme: mythem.darkthem(context),
+      theme: mythem.ligththem(context),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
-      initialRoute: myroutes.homepage,
+      initialRoute: myroutes.loginpage,
       routes: {
         myroutes.loginpage: (context) => log_in_page(),
         myroutes.homepage: (context) => home_page(),
