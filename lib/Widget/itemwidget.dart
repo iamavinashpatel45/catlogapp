@@ -1,7 +1,6 @@
 import 'package:catlog_app/models/catlogapp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../models/catlogapp.dart';
 
 class itemwidget extends StatelessWidget {
@@ -27,7 +26,7 @@ class itemwidget extends StatelessWidget {
                   width: 120,
                   height: 120,
                   decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Theme.of(context).backgroundColor,
                       borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -35,7 +34,6 @@ class itemwidget extends StatelessWidget {
                       tag: Key(Item.id.toString()),
                       child: Image.network(
                         Item.image,
-                        //color: Colors.black26,
                       ),
                     ),
                   ),
@@ -52,6 +50,7 @@ class itemwidget extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
+                          color: Theme.of(context).cursorColor,
                         ),
                       ),
                       Text(
@@ -59,6 +58,7 @@ class itemwidget extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w100,
+                          color: Theme.of(context).cursorColor,
                         ),
                       ),
                       //SizedBox(height: 5,),
@@ -80,12 +80,13 @@ class itemwidget extends StatelessWidget {
                             onPressed: () {},
                             style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.grey[700]),
+                                    MaterialStateProperty.all(Colors.grey[200]),
                                 shape:
                                     MaterialStateProperty.all(StadiumBorder())),
                             child: Icon(
                               Icons.shopping_cart,
                               size: 25,
+                              color: Colors.blue,
                             ),
                           )
                         ],

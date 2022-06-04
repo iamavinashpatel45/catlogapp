@@ -15,15 +15,15 @@ class myheader extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30,
+            color: Theme.of(context).cursorColor,
           ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10,left: 10),
             child: Text('Trending Products',
-              // style: TextStyle(
-              //   fontWeight: FontWeight.bold,
-              //   fontSize: 30,
-              // ),
+              style: TextStyle(
+                color: Theme.of(context).cursorColor,
+              ),
             ),
           ),
         ],

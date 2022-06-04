@@ -28,7 +28,12 @@ class _log_in_pageState extends State<log_in_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Log In'),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: Text('Log In',
+        style: TextStyle(
+          color: Theme.of(context).cursorColor,
+        ),
+        ),
       ),
       body: Scaffold(
         body: SingleChildScrollView(
@@ -46,8 +51,8 @@ class _log_in_pageState extends State<log_in_page> {
                 Text(
                   'welcome $name',
                   style: TextStyle(
+                    color: Theme.of(context).primaryColor,
                     fontSize: 25,
-                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -110,17 +115,20 @@ class _log_in_pageState extends State<log_in_page> {
                           width: changebutton ? 40 : 100,
                           height: 40,
                           child: changebutton
-                              ? Icon(Icons.done)
+                              ? Icon(Icons.done,
+                          color: Theme.of(context).cursorColor,
+                          )
                               : Text(
                                   'Login',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
+                                    color: Theme.of(context).cursorColor,
                                   ),
                                 ),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: Theme.of(context).primaryColor,
                             borderRadius:
                                 BorderRadius.circular(changebutton ? 40 : 10),
                           ),

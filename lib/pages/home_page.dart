@@ -34,19 +34,23 @@ class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       bottomSheet: Container(
         height: 70,
+        color: Theme.of(context).backgroundColor,
         width: MediaQuery.of(context).size.width,
       ),
-      backgroundColor: Colors.grey[200],
       // appBar: AppBar(
       //   title: Text('Catlog App'),
       // ),
       // drawer: mydrawer(),
       floatingActionButton: FloatingActionButton(
-        onPressed: ()=>Navigator.pushNamed(context, myroutes.cart),
-        backgroundColor: Colors.grey[700],
-        child: Icon(Icons.shopping_cart),
+        onPressed: () => Navigator.pushNamed(context, myroutes.cart),
+        backgroundColor: Colors.grey[200],
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.blue,
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,6 +71,7 @@ class _home_pageState extends State<home_page> {
                           Item: catlogitems.items[index],
                         ),
                       )),
+
             )
           else
             Expanded(
@@ -74,6 +79,7 @@ class _home_pageState extends State<home_page> {
                 child: CircularProgressIndicator(),
               ),
             ),
+          SizedBox(height: 65,)
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:catlog_app/Widget/them.dart';
 import 'package:catlog_app/models/catlogapp.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,12 @@ class details_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      //backgroundColor: Theme.of(context).,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).backgroundColor,
         elevation: 0,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Theme.of(context).cursorColor,
         ),
       ),
       bottomNavigationBar: buttombar(Item: Item,),

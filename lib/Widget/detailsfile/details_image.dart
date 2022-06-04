@@ -11,7 +11,7 @@ class details_image extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).backgroundColor,
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(70),
               bottomRight: Radius.circular(70))),

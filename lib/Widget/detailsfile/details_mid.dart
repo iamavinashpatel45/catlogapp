@@ -11,7 +11,7 @@ class details_mid extends StatelessWidget {
     return Expanded(
         child: Container(
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: Theme.of(context).cardColor,
       ),
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -23,6 +23,7 @@ class details_mid extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Theme.of(context).cursorColor,
               ),
             ),
           ),
@@ -31,6 +32,7 @@ class details_mid extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
+              color: Theme.of(context).cursorColor,
             ),
           ),
           Padding(
@@ -39,6 +41,7 @@ class details_mid extends StatelessWidget {
               'Nostrud magna elit culpa nisi laborum id. Nulla sit labore ut cupidatat officia reprehenderit qui duis nisi. Magna sunt cillum consectetur consectetur nulla incididunt eiusmod commodo in aliquip. Minim ipsum do ipsum excepteur as eiusmod. Ea ea irure consectetur proident nisi voluptate ea eiusmod dolor nisi laborum non sit. Et in ad duis qui ipsum non dolor proident aliqua anim Lorem sint.Magna sunt ad cillum consectetur consectetur nulla incididunt eiusmod commodo in aliquip. Minim ipsum do ipsum excepteur add eiusmod.',
               style: TextStyle(
                 fontSize: 12,
+                color: Theme.of(context).cursorColor,
               ),
             ),
           )
